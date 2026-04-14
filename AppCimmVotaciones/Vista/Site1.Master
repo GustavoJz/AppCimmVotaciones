@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="AppCimmVotaciones.Vista.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+                <div class="container">
+                    <a class="navbar-brand fw-bold" href="#">Votaciones Cimm</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="menu">
+                        <ul class="navbar-nav ms-auto">
+
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#">Home</a>
+                            </li>
+
+                            <asp:Label ID="lblUsuario" runat="server" Text="" class="nav-link d-flex align-items-center"></asp:Label>
+
+                            <li class="nav-item ms-4">
+                                <asp:LinkButton ID="lbCerrar" runat="server" class="nav-link d-flex align-items-center" OnClick="lbCerrar_Click"><i class="bi bi-person-circle me-2"></i>Cerrar Sesión</asp:LinkButton>
+                               
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- SIDEBAR -->
+                    <div class="col-3 col-md-2 bg-dark text-white min-vh-100 p-3">
+
+                        <h5 class="text-center">Menú</h5>
+                        <hr>
+
+                        <div id="menuAccordion">
+
+                            <!-- CANDIDATOS -->
+                            <a class="d-flex align-items-center text-white text-decoration-none p-2"
+                                data-bs-toggle="collapse" href="#candidatos">
+                                <i class="bi bi-people me-2"></i>Candidatos
+                            </a>
+                            <div class="collapse ps-3" id="candidatos" data-bs-parent="#menuAccordion">
+                                <a href="RegistrarCandidatos.aspx" class="d-block text-white text-decoration-none p-1">
+                                    <i class="bi bi-person-plus"></i>Registrar
+                                </a>
+                                <a href="candidatos/perfiles.html" class="d-block text-white text-decoration-none p-1">
+                                    <i class="bi bi-person-lines-fill"></i>Perfiles
+                                </a>
+                                <a href="#" class="d-block text-white text-decoration-none p-1">
+                                    <i class="bi bi-three-dots"></i>Otra Opción
+                                </a>
+                            </div>
+
+                            <!-- FICHAS -->
+                            <a class="d-flex align-items-center text-white text-decoration-none p-2 mt-2"
+                                data-bs-toggle="collapse" href="#fichas">
+                                <i class="bi bi-folder"></i><span class="ms-2">Fichas</span>
+                            </a>
+                            <div class="collapse ps-3" id="fichas" data-bs-parent="#menuAccordion">
+                                <a href="FichasFormacion.aspx" class="d-block text-white text-decoration-none p-1">
+                                    <i class="bi bi-geo-alt"></i>Registrar Fichas
+                                </a>
+                                <a href="fichas/programas.html" class="d-block text-white text-decoration-none p-1">
+                                    <i class="bi bi-journal-code"></i>Programas
+                                </a>
+                                <a href="fichas/estados.html" class="d-block text-white text-decoration-none p-1">
+                                    <i class="bi bi-check-circle"></i>Estados
+                                </a>
+                            </div>
+
+                            <!-- INSTRUCTORES -->
+                            <a class="d-flex align-items-center text-white text-decoration-none p-2 mt-2"
+                                data-bs-toggle="collapse" href="#instructores">
+                                <i class="bi bi-mortarboard"></i><span class="ms-2">Instructores</span>
+                            </a>
+                            <div class="collapse ps-3" id="instructores" data-bs-parent="#menuAccordion">
+                                <a href="instructores/registrar.html" class="d-block text-white text-decoration-none p-1">
+                                    <i class="bi bi-person-plus"></i>Registrar
+                                </a>
+                                <a href="instructores/listar.html" class="d-block text-white text-decoration-none p-1">
+                                    <i class="bi bi-list"></i>Listar
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CONTENIDO -->
+                    <div class="col-9 col-md-10 p-4">
+
+                        <asp:ContentPlaceHolder ID="ContentBody" runat="server">
+                        </asp:ContentPlaceHolder>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bootstrap JS (solo para funcionamiento interno) -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </div>
+    </form>
+</body>
+</html>
