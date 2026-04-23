@@ -23,7 +23,7 @@
         <div class="container mt-5">
 
             <!-- NAVBAR -->
-            <h3>Cambio para PR</h3>
+          
             <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
                 <div class="container">
                     <a class="navbar-brand fw-bold" href="#">Votaciones Cimm</a>
