@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.aspx" />
+    <Content Include="Vista\Assets\css\EstiloLanding.css" />
+    <Content Include="Vista\Assets\img\imghero.png" />
     <Content Include="Vista\Auth\Login.aspx" />
     <Content Include="Vista\Bootstrap\css\bootstrap-grid.css" />
     <Content Include="Vista\Bootstrap\css\bootstrap-grid.min.css" />
